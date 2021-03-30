@@ -1,0 +1,33 @@
+<h1>Sign Up Form</h1>
+
+<% if flash[:errors]%>
+    <% flash[:errors].each do |error|%>
+        <p style= "color:red;"><%= error%></p>
+    <% end %>
+<%end%>
+
+
+<%= form_for @person do |f|%>
+   <label>Name: </label>
+    <%=f.text_field :name%><br>
+    <br>
+
+    <label>Age: </label>
+    <%=f.number_field :age, in:16..70%><br>
+    <br>
+
+    <label>Gender: </label>
+    <%=f.select :gender, ['Male', 'Female']%><br>
+    <br>
+
+    <label>Username: </label>
+    <%=f.text_field :username%><br>
+    <br>
+
+    <label>Email: </label>
+    <%=f.text_field :email%><br>
+    <br>
+
+
+    <%=f.submit "Sign Up" %>
+<%end%>
