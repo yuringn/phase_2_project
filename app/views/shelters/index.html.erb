@@ -1,0 +1,12 @@
+<h1> Check Out These Success Stories!</h1>
+
+
+
+<% @shelters.each do |shelter|%>
+    <%if shelter.puppies.count > 0 %>
+<h3>    Shelter Name: <%=shelter.name%></h3>
+        <%shelter.puppies.each do |puppy|%>
+<ul><li> Puppy: <%=puppy.name%><br></li></ul>
+        <%end%>
+     <%end%>
+<%end%>

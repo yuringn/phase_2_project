@@ -24,8 +24,4 @@ class PeopleController < ApplicationController
         params.require(:person).permit(:name, :age, :gender, :username, :email)
     end
 
-    # def destroy
-    #     @person.rental.id.destroy
-    #     redirect_to person_path(@person)
-    # end
 end
