@@ -1,0 +1,15 @@
+<h1>All Advertisements</h1>
+
+
+<div class="index-container">
+    <% @advertisements.each do |ad|%>
+        <div class="index-card">
+        <img class="index-img" src="<%= ad.puppy.image%>" alt="<%= ad.puppy.name %>"width="400" height="400">
+        <p>Puppy Name: <%= ad.puppy.name%></p>
+        <p>Cute Fact:<%=ad.puppy.cute_fact%></p>  
+        <p><%=button_to "Click to see more", puppy_path(ad.puppy.id), method: :get %></p>
+        </div> 
+    <% end %>
+</div>
+
+

@@ -33,8 +33,7 @@ url = "https://random.dog/woof.json"
   res = RestClient.get(url)
   res_body = res.body 
   ruby_hash = JSON.parse(res_body)
-
-
+  
   Puppy.create(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, age: rand(1..10), cute_fact: Faker::Creature::Dog.meme_phrase, cost: rand(50..100), shelter_id: Shelter.all.sample.id, image: ruby_hash["url"])
 end
 
