@@ -1,0 +1,25 @@
+<h1> Lets rent a puppy! </h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+<br>
+
+<%= form_for @rental do |f|%>
+    <%= f.label :person_id %>
+      <%= f.collection_select :person_id, @people, :id, :name %>
+      <br> <br>
+      <%= f.label :puppy_id %>
+      <%= f.collection_select :puppy_id, @puppies, :id, :name %>
+      <br><br>
+      <%= f.label :time %>
+      <%= f.number_field :time %>
+      <br><br>
+      <%= f.label :cost %>
+      $<%= @rental.new_cost %>
+    <br><br>
+<%=f.submit%>
+
+<%end%>
