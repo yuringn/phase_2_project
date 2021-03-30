@@ -6,4 +6,6 @@ class PuppiesController < ApplicationController
     def show
         @puppy = Puppy.find(params[:id])
     end
+
+
 end
