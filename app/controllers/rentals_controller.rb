@@ -22,14 +22,22 @@ class RentalsController < ApplicationController
      def destroy
         @rental = Rental.find(params[:id])
         @rental.destroy
-        redirect_to person_path(@person)
+        redirect_to person_path(@rental.person_id)
+    
+    end
+
+    def update
+        @rental = Rental.find(params[:id])
+        @rental.update(completed:true)
+        redirect_to person_path(@rental.person_id)
+       
     end
 
     private
 
     def rental_params
         params.require(:rental).permit(:puppy_id, :person_id, :time)
-        
     end
+
     
 end
