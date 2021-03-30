@@ -17,7 +17,12 @@ class RentalsController < ApplicationController
             flash[:errors] = @rental.errors.full_messages
             redirect_to new_rental_path
         end
+    end
 
+     def destroy
+        @rental = Rental.find(params[:id])
+        @rental.destroy
+        redirect_to person_path(@person)
     end
 
     private
