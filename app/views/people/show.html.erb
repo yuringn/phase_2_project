@@ -1,1 +1,10 @@
 <h1> Welcome to <%=@person.name%>'s Profile</h1>
+
+<h3>Age: <%=@person.age%></h3>
+<h3>Gender: <%=@person.gender%></h3>
+<h4> Your current Puppy Rentals: </h4>
+<%@person.rentals.each do |rental|%>
+  <ul><li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+   Rental Time: <%= rental.time%></li></ul>
+<%end%>
+
