@@ -30,7 +30,6 @@ class RentalsController < ApplicationController
         @rental = Rental.find(params[:id])
         @rental.update(completed:true)
         redirect_to person_path(@rental.person_id)
-       
     end
 
     private
