@@ -1,3 +1,16 @@
 // Place all the styles related to the advertisements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+div.index-card {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px 0px;
+    text-align: center;
+    border-radius: 25px;
+    width: 30%;
+  }
+
+  div.index-card img {
+    width: 150px;
+    height: 100px;
+  }

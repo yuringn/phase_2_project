@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :advertisements, only: [:index]
   resources :shelters
 
-  delete "sessions/logout", to: "main#index", as: :logout
+  delete "/logout", to: "sessions#logout", as: 'logout'
 
   root to: "main#index"
 

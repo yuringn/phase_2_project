@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_31_022846) do
     t.integer "person_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "complete", default: false
+    t.boolean "completed"
   end
 
   create_table "shelters", force: :cascade do |t|
