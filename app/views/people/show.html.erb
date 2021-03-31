@@ -21,7 +21,7 @@
 
 <br><br>
 
-<h4> Your Past Puppy Rentals: </h4>
+<h4> Your Previous Puppy Rentals: </h4>
 <%if @person.rentals.where(completed:true).count > 0 %>
         <%@person.rentals.each do |rental|%>
             <%if rental.completed == true%>
