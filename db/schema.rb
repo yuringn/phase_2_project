@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_181841) do
+ActiveRecord::Schema.define(version: 2021_03_31_022846) do
 
   create_table "advertisements", force: :cascade do |t|
     t.integer "shelter_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_181841) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   create_table "puppies", force: :cascade do |t|
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_181841) do
     t.integer "person_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "completed"
+    t.boolean "complete", default: false
   end
 
   create_table "shelters", force: :cascade do |t|

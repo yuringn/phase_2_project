@@ -11,6 +11,7 @@ class PeopleController < ApplicationController
     def create
         @person = Person.create(people_params)
         if @person.valid?
+            session[:person_id] = @person.id
             redirect_to person_path(@person)
         else
             flash[:errors] = @person.errors.full_messages
@@ -21,7 +22,7 @@ class PeopleController < ApplicationController
     private
 
     def people_params
-        params.require(:person).permit(:name, :age, :gender, :username, :email)
+        params.require(:person).permit(:name, :age, :gender, :username, :email, :password)
     end
 
 end

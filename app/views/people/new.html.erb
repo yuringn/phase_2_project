@@ -8,26 +8,29 @@
 
 
 <%= form_for @person do |f|%>
-   <label>Name: </label>
+    <%=f.label :name, "Name: "%>  
     <%=f.text_field :name%><br>
     <br>
 
-    <label>Age: </label>
+    <%=f.label :age, "Age: "%> 
     <%=f.number_field :age, in:16..70%><br>
     <br>
 
-    <label>Gender: </label>
+    <%=f.label :gender, "Gender: "%> 
     <%=f.select :gender, ['Male', 'Female']%><br>
     <br>
 
-    <label>Username: </label>
-    <%=f.text_field :username%><br>
-    <br>
-
-    <label>Email: </label>
+    <%=f.label :email, "Email: "%> 
     <%=f.text_field :email%><br>
     <br>
 
+    <%=f.label :username, "Username: "%> 
+    <%=f.text_field :username%><br>
+    <br>
+
+    <%=f.label :password, "Password: "%> 
+    <%=f.text_field :password%><br>
+    <br>
 
     <%=f.submit "Sign Up" %>
 <%end%>
