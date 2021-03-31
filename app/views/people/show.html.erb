@@ -1,4 +1,4 @@
-<h1> Welcome to <%=@person.name%>'s Profile</h1>
+<h1> Welcome to <%=@person.name.capitalize%>'s Profile</h1>
 
 <h3>Age: <%=@person.age%></h3>
 <h3>Gender: <%=@person.gender%></h3>
@@ -25,11 +25,11 @@
 <%if @person.rentals.where(completed:true).count > 0 %>
         <%@person.rentals.each do |rental|%>
             <%if rental.completed == true%>
-        <ul><li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
-        Rental Time: <%= rental.time%></li></ul>
+        <ul><li> Puppy: <%link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+        Rental Time: <%rental.time%></li></ul>
             <%end%>
          <%end%> <br><br>
-         <%=link_to "Let's Go See Available Puppies!", advertisements_path%>
+         <%link_to "Let's Go See Available Puppies!", advertisements_path%>
 
    <%else%>
     Looks like you don't have any completed Puppy Rentals... <br><br>

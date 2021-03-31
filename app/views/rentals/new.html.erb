@@ -15,7 +15,7 @@
       <%= f.collection_select :puppy_id, @puppies, :id, :name %>
       <br><br>
       <%= f.label :time %>
-      <%= f.number_field :time %>
+      <%= f.number_field :time, in: 1..24 %>
       <br><br>
       <%= f.label :cost %>
       $<%= @rental.new_cost %>

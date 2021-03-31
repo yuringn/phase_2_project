@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   resources :people
   resources :rentals
   resources :puppies
-  resources :advertisements
+  resources :advertisements, only: [:index]
   resources :shelters
 
-  root to:"main#index"
+  delete "sessions/logout", to: "main#index", as: :logout
+
+  root to: "main#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
