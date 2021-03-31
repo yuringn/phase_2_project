@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :advertisements, only: [:index]
   resources :shelters
 
-  delete "/logout", to: "sessions#logout", as: 'logout'
+  get "/logout", to: "sessions#logout", as: 'logout'
 
-  root to: "main#index"
+  get "/sessions/new", to: "sessions#new_login", as: "new_login"
+  post "/sessions", to: "sessions#create_login", as: "login"
+
+  root to: "main#index", as: "main"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

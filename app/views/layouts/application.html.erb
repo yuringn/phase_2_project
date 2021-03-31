@@ -27,9 +27,10 @@
           <a class="nav-link active" aria-current="page" href="<%= person_path(@current_person)%> ">Profile</a>
           <a class="nav-link" href="/advertisements">Advertisements</a>
           <a class="nav-link" href="/rentals/new">Rent a Pup</a>
-          <a class="nav-link" data-method="delete" href="/logout" >Logout</a>
+          <a class="nav-link"  href="/logout" >Logout</a>
         <%else%>
           <a class="nav-link" href="/people/new">Sign Up</a>
+          <a class="nav-link" href="/sessions/new">Login</a>
         <%end%>
       </div>
     </div>
