@@ -8,7 +8,7 @@ class RentalsController < ApplicationController
     end
 
     def create
-        @rental = Rental.new(rental_params)
+        @rental = @current_user.rentals.build(rental_params)
         
         if @rental.valid?
             @rental.save

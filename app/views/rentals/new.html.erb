@@ -8,9 +8,9 @@
 <br>
 
 <%= form_for @rental do |f|%>
-    <%= f.label :person_id %>
-      <%= f.collection_select :person_id, @people, :id, :name %>
-      <br> <br>
+    # <%= #f.label :person_id %>
+    #   <%= #f.collection_select :person_id, @people, :id, :name %>
+    #   <br> <br>
       <%= f.label :puppy_id %>
       <%= f.collection_select :puppy_id, @puppies, :id, :name %>
       <br><br>
