@@ -1,17 +1,15 @@
-<head>
-<link rel="stylesheet" href="application.css">
-</head>
 
 <h1>All Puppies available for rental:</h1>
 
 <div class="index-container">
     <% @advertisements.each do |ad|%>
+        <%if ad.puppy.adoption == nil || ad.puppy.adoption == false %>
+
         <div class="index-card">
         <img class="index-img" src="<%= ad.puppy.image%>" alt="<%= ad.puppy.name %>"width="400" height="400">
-        <p>Puppy Name: <%= ad.puppy.name%></p>
-        <p>Cute Fact:<%=ad.puppy.cute_fact%></p>  
-        <p><%=button_to "Click to see more", puppy_path(ad.puppy.id), method: :get %></p>
+        <p><%= link_to ad.puppy.name, puppy_path(ad.puppy.id)%></p>
         </div> 
+        <% end %>
     <% end %>
 </div>
 
