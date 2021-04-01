@@ -3,22 +3,23 @@
 </div>
 <img class="show-img" src="<%= @puppy.image %>" alt="<%= @puppy.name %>" width="333" height="333">
 <section class="details">
-<p>Name: <%= @puppy.name%></p>
-<p>Breed: <%= @puppy.breed%></p>
-<p>Age: <%= @puppy.age%></p>
-<p>Shelter Name: <%= @puppy.shelter.name%></p>
-<p>Shelter Location: <%= @puppy.shelter.location%></p>
-<p>Cute Fact about <%= @puppy.name%>: <%= @puppy.cute_fact%></p>
+<p><b>Name:</b> <%= @puppy.name%></p>
+<p><b>Breed:</b> <%= @puppy.breed%></p>
+<p><b>Age:</b> <%= @puppy.age%></p>
+<p><b>Shelter Name:</b> <%= @puppy.shelter.name%></p>
+<p><b>Shelter Location:</b> <%= @puppy.shelter.location%></p>
+<p><b>Cute Fact about <%= @puppy.name%>:</b> <%= @puppy.cute_fact%></p>
 </section>
 <br>
 
 <%flash[:puppy_id]=@puppy.id%>
 <%flash[:puppy_name]=@puppy.name%>
 
+<section class="button">
 <a class="btn btn-outline-secondary" href="/rentals/new">Rent this cutie</a>
+<a class="btn btn-outline-secondary" href="<%=person_path(@current_person)%>">Adopt This Puppy</a>
+</section>
 
-<%=button_to "Adopt This Puppy", advertisements_path, method: :get%>
-<a class="btn btn-outline-secondary" href="/advertisements">Back to list of puppies</a>
 
 
 
