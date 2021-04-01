@@ -29,7 +29,7 @@ class RentalsController < ApplicationController
 
     def update
         @rental = Rental.find(params[:id])
-        @rental.update(completed:true)
+        @rental.update(complete:true)
         redirect_to person_path(@rental.person_id)
     end
 
