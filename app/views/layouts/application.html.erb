@@ -25,7 +25,6 @@
          <%if @current_person%>
           <a class="nav-link"> Welcome <%= @current_person.name.upcase%></a>
           <a class="nav-link" href="/advertisements">Puppies</a>
-          <a class="nav-link" href="/rentals/new">Rent a Pup</a>
           <a class="nav-link" href="/shelters">Success Stories</a>
           <a class="nav-link active" aria-current="page" href="<%= person_path(@current_person)%> ">Profile</a>
           <a class="nav-link"  href="/logout" >Logout</a>
