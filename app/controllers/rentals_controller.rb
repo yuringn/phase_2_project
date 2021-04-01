@@ -2,13 +2,15 @@ class RentalsController < ApplicationController
     def new
         @rental = Rental.new
 
-        @people = Person.all
         @puppies = Puppy.all
         render :new
     end
 
     def create
-        @rental = @current_user.rentals.build(rental_params)
+        params_hash = rental_params
+        params_hash[:person_id] = session[:person_id]
+        # params_hash[:puppy_id] = session[:puppy_id]
+        @rental = Rental.new(params_hash)
         
         if @rental.valid?
             @rental.save
