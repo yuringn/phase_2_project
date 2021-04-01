@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 div.index-card {
-    border: 1px solid black;
+    border: 1px solid #ddd;
     padding: 10px;
     margin: 5px 0px;
     text-align: center;
@@ -25,5 +25,11 @@ div.index-card {
   }
 
   .index-card:hover {
-    background-color: darkgray;
+    background-color: #FFFAF0;
   }
+  p.name {
+    margin-top: 12px;
+  }
+a:link {
+  text-decoration: none ;
+}
