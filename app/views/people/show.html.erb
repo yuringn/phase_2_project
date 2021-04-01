@@ -10,19 +10,23 @@
     <div class = "upcoming">
         <h4> Your upcoming Puppy Rentals: </h4>
         <%if @person.rentals.count > 0 %>
-                <%@person.rentals.each do |rental|%>
+        <div class="upcoming-container"> 
+                <% @person.rentals.each do |rental|%>
                     <%if rental.complete == nil  && rental.puppy.adoption == nil|| rental.complete == false && rental.puppy.adoption == nil && rental.puppy.adoption == nil%>
-                    <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
-                    <ul>
-                            <li>Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
-                                Rental Time: <%= rental.time%>
-                            </li>
-                    </ul>
-                <p><%= button_to "Cancel Rental", rental_path(rental.id), method: :delete %></p>
-                <p><%= button_to "Completed!", rental_path(rental.id), method: :patch %></p>
+                    <div class="upcoming-card"> 
+                        <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
+                        <ul>
+                                <li>Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+                                    Rental Time: <%= rental.time%>
+                                </li>
+                        </ul>
+                   
+                        <p><%= button_to "Cancel Rental", rental_path(rental.id), method: :delete %></p>
+                        <p><%= button_to "Completed!", rental_path(rental.id), method: :patch %></p>
+                     </div>    
                     <%end%>
                 <%end%>
-                
+                </div>
 
         <%else%>
             Looks like you dont have any upcoming Puppy Rentals... <br><br>
@@ -31,19 +35,23 @@
 
     <div class= "previous">
         <h4> Your Previous Puppy Rentals: </h4>
+        
         <%if @person.rentals.count > 0 %>
+        <div class="previous-container"> 
                 <%@person.rentals.each do |rental|%>
                     <%if rental.complete == true && rental.puppy.adoption == nil%>
-                    <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
-                <ul>
-                    <li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
-                        Rental Time: <%=rental.time%>
-                    </li>
-                </ul>
-                <%= button_to "Adopt this Puppy!", puppy_path(rental.puppy.id), method: :patch %>
-
+                    <div class="previous-card"> 
+                        <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
+                        <ul>
+                            <li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+                                Rental Time: <%=rental.time%>
+                            </li>
+                        </ul>
+                        <%= button_to "Adopt this Puppy!", puppy_path(rental.puppy.id), method: :patch %>
+                    </div>
                     <%end%>
-                <%end%> <br><br>
+                <%end%>
+        </div>
         <%else%>
             Looks like you dont have any completed Puppy Rentals... <br><br>
         <%end%>
