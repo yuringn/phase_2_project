@@ -5,7 +5,7 @@
 <h4> Your upcoming Puppy Rentals: </h4>
 <%if @person.rentals.count > 0 %>
         <%@person.rentals.each do |rental|%>
-            <%if rental.completed == nil  && rental.puppy.adoption == nil|| rental.completed == false && rental.puppy.adoption == nil && rental.puppy.adoption == nil%>
+            <%if rental.complete == nil  && rental.puppy.adoption == nil|| rental.complete == false && rental.puppy.adoption == nil && rental.puppy.adoption == nil%>
              <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
              <ul>
                     <li>Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
@@ -30,7 +30,7 @@
 <h4> Your Previous Puppy Rentals: </h4>
 <%if @person.rentals.count > 0 %>
         <%@person.rentals.each do |rental|%>
-            <%if rental.completed == true && rental.puppy.adoption == nil%>
+            <%if rental.complete == true && rental.puppy.adoption == nil%>
             <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
         <ul>
             <li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
@@ -44,5 +44,5 @@
          <%link_to "Let's Go See Available Puppies!", advertisements_path%>
 
    <%else%>
-    Looks like you don't have any completed Puppy Rentals... <br><br>
+    Looks like you don't have any complete Puppy Rentals... <br><br>
 <%end%>
