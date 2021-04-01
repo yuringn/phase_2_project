@@ -1,21 +1,24 @@
-
+<div class ="d-flex align-items-center justify-content-center">
 <h1>This is <%=@puppy.name%>!</h1>
-
+</div>
 <img class="show-img" src="<%= @puppy.image %>" alt="<%= @puppy.name %>" width="333" height="333">
+<section class="details">
 <p>Name: <%= @puppy.name%></p>
 <p>Breed: <%= @puppy.breed%></p>
 <p>Age: <%= @puppy.age%></p>
 <p>Shelter Name: <%= @puppy.shelter.name%></p>
 <p>Shelter Location: <%= @puppy.shelter.location%></p>
 <p>Cute Fact about <%= @puppy.name%>: <%= @puppy.cute_fact%></p>
+</section>
 <br>
 
 <%flash[:puppy_id]=@puppy.id%>
 <%flash[:puppy_name]=@puppy.name%>
 
-<%= button_to "Rent this cutie", new_rental_path, method: :get%>
+<a class="btn btn-outline-secondary" href="/rentals/new">Rent this cutie</a>
 
-<br>
-<%=button_to "Back to list of puppies", advertisements_path, method: :get%>
-<br>
 <%=button_to "Adopt This Puppy", advertisements_path, method: :get%>
+<a class="btn btn-outline-secondary" href="/advertisements">Back to list of puppies</a>
+
+
+
