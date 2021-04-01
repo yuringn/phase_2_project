@@ -9,7 +9,6 @@ class RentalsController < ApplicationController
     def create
         params_hash = rental_params
         params_hash[:person_id] = session[:person_id]
-        # params_hash[:puppy_id] = session[:puppy_id]
         @rental = Rental.new(params_hash)
         
         if @rental.valid?
