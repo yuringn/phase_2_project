@@ -8,13 +8,12 @@
         <h3>Gender: <%=@person.gender%></h3>
     </div>
     <div class = "upcoming">
-
         <h4> Your upcoming Puppy Rentals: </h4>
         <%if @person.rentals.count > 0 %>
                 <%@person.rentals.each do |rental|%>
                     <%if rental.complete == nil  && rental.puppy.adoption == nil|| rental.complete == false && rental.puppy.adoption == nil && rental.puppy.adoption == nil%>
-                    <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                     <ul>
+                        <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                             <li>Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
                                 Rental Time: <%= rental.time%>
                             </li>
@@ -24,10 +23,9 @@
                     <%end%>
                 <%end%>
                 
-                
+
         <%else%>
             Looks like you dont have any upcoming Puppy Rentals... <br><br>
-            <%=link_to "Lets Go See Available Puppies!", advertisements_path%>
         <%end%>
     </div>
 
