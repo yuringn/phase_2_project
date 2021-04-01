@@ -8,10 +8,11 @@
 <br>
 
 <%= form_for @rental do |f|%>
-      <%= f.label :puppy_id %>
-      <%= f.collection_select :puppy_id, @puppies, :id, :name %>
-      <br><br>
-      <%= f.label :time %>
+      Puppy to Rent: <%=flash[:puppy_name]%>
+
+      <%= f.hidden_field :puppy_id, value: flash[:puppy_id] %>      <br><br>
+
+      <%= f.label :time, "Reserve a Time:" %>
       <%= f.number_field :time, in: 1..24 %>
       <br><br>
       <%= f.label :cost %>

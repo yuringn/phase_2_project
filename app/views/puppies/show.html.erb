@@ -10,6 +10,8 @@
 <p>Cute Fact about <%= @puppy.name%>: <%= @puppy.cute_fact%></p>
 <br>
 
+<%flash[:puppy_id]=@puppy.id%>
+<%flash[:puppy_name]=@puppy.name%>
 
 <%= button_to "Rent this cutie", new_rental_path, method: :get%>
 
