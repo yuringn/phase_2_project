@@ -41,8 +41,23 @@
 
             <%end%>
          <%end%> <br><br>
-         <%link_to "Let's Go See Available Puppies!", advertisements_path%>
+         <%link_to "Lets Go See Available Puppies!", advertisements_path%>
 
    <%else%>
-    Looks like you don't have any completed Puppy Rentals... <br><br>
+    Looks like you dont have any completed Puppy Rentals... <br><br>
+<%end%>
+
+<h4> Members of your Pack: </h4>
+<% if @person.puppies.count > 0 %>
+        <%@person.puppies.each do |puppy|%>
+            <%if puppy.adoption == true%>
+            <img class="index-img" src="<%= puppy.image%>" alt="<%= puppy.name %>"width="150" height="150">
+        <ul>
+            <li> Puppy: <%=puppy.name%><br>
+            </li>
+        </ul>
+            <%end%>
+         <%end%> <br><br>
+   <%else%>
+    Looks like you havent adopted any puppies... <br><br>
 <%end%>
