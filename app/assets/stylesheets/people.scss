@@ -55,7 +55,7 @@
 
     .upcoming { 
         position: relative;
-        border: 1px solid black;
+        // border: 1px solid black;
         grid-area: 1 / 1 / 3 / 3; 
         width: 100%;
         overflow-y: scroll;
@@ -69,7 +69,7 @@
         justify-content: space-evenly;
         align-items: center;
         overflow-y: scroll;
-        background-color:mintcream;
+        // background-color:mintcream;
     }
 
     .upcoming-card {
@@ -78,7 +78,7 @@
 
 
     .previous { 
-        border: 1px solid black;
+        // border: 1px solid black;
         grid-area: 3 / 1 / 5 / 3; 
     }
 
@@ -90,11 +90,12 @@
         justify-content: space-evenly;
         align-items: center;
         overflow-y: scroll;
-        background-color: navajowhite;
+        // background-color:rgba(170, 252, 255, 0.5);
     }
 
     .previous-card {
         width: 30%;
+        text-align: center;
     }
 
 

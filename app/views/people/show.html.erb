@@ -16,7 +16,7 @@
                     <div class="upcoming-card"> 
                         <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                         <ul>
-                                <li>Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+                                <li><%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
                                     Rental Time: <%= rental.time%>
                                 </li>
                         </ul>
@@ -34,9 +34,9 @@
     </div>
 
     <div class= "previous">
-    <div class="previous-container"> 
+    
     <h4> Your Previous Puppy Rentals: </h4>
-        
+    <div class="previous-container">  
         <%if @person.rentals.count > 0 %>
                 <%@person.rentals.each do |rental|%>
                     
@@ -44,8 +44,7 @@
                         <div class="previous-card"> 
                             <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                             <ul>
-                                <li> Puppy: <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
-                                    Rental Time: <%=rental.time%>
+                                <li> <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
                                 </li>
                             </ul>
                             <%= button_to "Adopt this Puppy!", puppy_path(rental.puppy.id), method: :patch %>

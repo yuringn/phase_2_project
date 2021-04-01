@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Shelter.destroy_all
-Person.destroy_all
+# Person.destroy_all
 Puppy.destroy_all
 Rental.destroy_all
 Advertisement.destroy_all
@@ -23,9 +23,9 @@ Advertisement.reset_pk_sequence
 end
 
 # Faker::Internet.username #=> "alexie"
-15.times do
-    Person.create(name: Faker::Movies::StarWars.character, age: rand(16..70), gender: Faker::Gender.binary_type, username: Faker::Internet.username, email: Faker::Internet.free_email)
-end
+# 15.times do
+#     Person.create(name: Faker::Movies::StarWars.character, age: rand(16..70), gender: Faker::Gender.binary_type, username: Faker::Internet.username, email: Faker::Internet.free_email)
+# end
 
 #image !!!
 url = "https://random.dog/woof.json"
