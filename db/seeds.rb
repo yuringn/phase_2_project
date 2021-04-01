@@ -29,7 +29,7 @@ end
 
 #image !!!
 url = "https://random.dog/woof.json"
-20.times do 
+35.times do 
   res = RestClient.get(url)
   res_body = res.body 
   ruby_hash = JSON.parse(res_body)
