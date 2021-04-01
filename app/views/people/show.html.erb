@@ -1,5 +1,5 @@
-<h1> Welcome to <%=@person.name.capitalize%>'s Profile</h1>
-
+<h1> Welcome to <%=@person.name.titleize%>'s Profile</h1>
+<div class = "profile">
 <h3>Age: <%=@person.age%></h3>
 <h3>Gender: <%=@person.gender%></h3>
 <h4> Your upcoming Puppy Rentals: </h4>
@@ -15,7 +15,9 @@
         <%= button_to "Cancel Rental", rental_path(rental.id), method: :delete %>
         <%= button_to "Completed!", rental_path(rental.id), method: :patch %>
             <%end%>
-         <%end%> <br><br>
+         <%end%>
+         </div>
+          <br><br>
          <%=link_to "Lets Go See Available Puppies!", advertisements_path%>
 
    <%else%>
