@@ -1,5 +1,5 @@
 <div id="welcome">
-    <h1> Welcome to <%=@person.name.titleize%>'s Profile</h1>
+    <h1 class="welcome"> Welcome to <%=@person.name.titleize%>'s Profile</h1>
 </div>
 
 <div class = "show-container">
@@ -16,26 +16,26 @@
                     <div class="upcoming-card"> 
                         <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                         <ul>
-                                <li><%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
-                                    Rental Time: <%= rental.time%>
+                                <li class="puppy_name"><%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+                                    <p class="rental_time">Rental Time: <%= rental.time%></p>
                                 </li>
                         </ul>
                    
-                        <p><%= button_to "Cancel Rental", rental_path(rental.id), method: :delete %></p>
-                        <p><%= button_to "Completed!", rental_path(rental.id), method: :patch %></p>
+                        <div class="button_cancel"><%= button_to "Cancel Rental", rental_path(rental.id), method: :delete,data:{confirm:"Sure?"}, class:"btn btn-outline-warning btn_cancel" %>
+                        <%= button_to "Completed!", rental_path(rental.id), method: :patch, class: "btn btn-outline-secondary btn1" %></div>
                      </div>    
                     <%end%>
                 <%end%>
                 </div>
 
         <%else%>
-            Looks like you dont have any upcoming Puppy Rentals... <br><br>
+            <p class="upcoming">Looks like you dont have any upcoming Puppy Rentals...</p> <br><br>
         <%end%>
     </div>
 
     <div class= "previous">
     
-    <h4> Your Previous Puppy Rentals: </h4>
+    <h4 class="h4"> Your Previous Puppy Rentals: </h4>
     <div class="previous-container">  
         <%if @person.rentals.count > 0 %>
                 <%@person.rentals.each do |rental|%>
@@ -44,10 +44,10 @@
                         <div class="previous-card"> 
                             <img class="index-img" src="<%= rental.puppy.image%>" alt="<%= rental.puppy.name %>"width="150" height="150">
                             <ul>
-                                <li> <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
+                                <li class="adopt_puppy"> <%=link_to rental.puppy.name, puppy_path(rental.puppy.id)%><br>
                                 </li>
                             </ul>
-                            <%= button_to "Adopt this Puppy!", puppy_path(rental.puppy.id), method: :patch %>
+                            <%= button_to "Adopt this Puppy", puppy_path(rental.puppy.id), method: :patch, class: "btn btn-outline-secondary btn1"  %>
                         </div>
                     <%end%>
                 <%end%>

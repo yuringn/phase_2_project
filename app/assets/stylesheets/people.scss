@@ -8,6 +8,10 @@
     color: yellowgreen;
 }
 
+.welcome {
+    margin: 50px 0 30px;
+}
+
 .show-container {
     height: 100vh;
     display: grid;
@@ -17,7 +21,7 @@
     grid-row-gap: 20px;
 }
 
-    .show-container h4 {
+    .show-container h4, .upcoming {
         text-align: center;
         padding: 20px;
     }   
@@ -97,6 +101,32 @@
         width: 30%;
         text-align: center;
     }
+
+    li.puppy_name, .adopt_puppy {
+        margin-top:10px;
+        margin-right:20px;
+    }
+
+    p.rental_time {
+        margin-bottom: 0;
+    }
+
+    .button_cancel{
+        margin-left: 20px;
+    }
+
+    .h4{
+        padding-bottom: 0;
+        padding-top: 20px;
+        margin-bottom: 0;
+        margin-top:30px
+
+    }
+
+    .head {
+        margin-top: 50px;
+    }
+  
 
 
 

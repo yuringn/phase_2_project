@@ -1,4 +1,4 @@
-<h1> Lets rent a puppy! </h1>
+<h1 class="head"> Lets rent a puppy! </h1>
 
 <% if flash[:errors] %>
   <% flash[:errors].each do |error| %>
@@ -23,6 +23,6 @@
       <br><br>
      
 <div class= "d-grid col-1">
-    <%=f.submit "Submit", class:"btn btn-secondary" %></div>
+    <%=f.submit "Submit", class:"btn btn-outline-secondary btn1" %></div>
 
 <%end%>
