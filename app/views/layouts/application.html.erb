@@ -12,30 +12,30 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+ 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-md">
-    <a class="navbar-brand" href="#"><img src="https://see.fontimg.com/api/renderfont4/2OjA3/eyJyIjoiZnMiLCJoIjoxMjQsInciOjIwMDAsImZzIjo2MiwiZmdjIjoiIzVENUQ1MyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/UHVwIEEgRGF5/dogmeal-figure.png" width="220"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-         <%if @current_person%>
-          <a class="nav-link"> Welcome <%= @current_person.name.upcase%></a>
-          <a class="nav-link" href="/advertisements">Puppies</a>
-          <a class="nav-link" href="/shelters">Success Stories</a>
-          <a class="nav-link active" aria-current="page" href="<%= person_path(@current_person)%> ">Profile</a>
-          <a class="nav-link"  href="/logout" >Logout</a>
-        <%else%>
-          <a class="nav-link" href="/people/new">Sign Up</a>
-          <a class="nav-link" href="/sessions/new">Login</a>
-        <%end%>
-      </div>
+
+  <div class="banner">
+    <div class="banner-overlay">
+      <img class="pup" src="https://see.fontimg.com/api/renderfont4/2OjA3/eyJyIjoiZnMiLCJoIjoxMjQsInciOjIwMDAsImZzIjo2MiwiZmdjIjoiIzVENUQ1MyIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/UHVwIEEgRGF5/dogmeal-figure.png">
     </div>
   </div>
-</nav>
+
+  <div class="nav">
+    <ul>
+      <%if @current_person%>
+        <li><a>Welcome <%= @current_person.name.titleize%></a></li>
+        <li><a href="/advertisements">Puppies</a></li>
+        <li><a href="/shelters">Success Stories</a></li>
+        <li><a href="<%= person_path(@current_person)%> ">Profile</a></li>
+        <li><a href="/logout" >Logout</a></li>
+      <%else%>
+        <li><a href="/people/new">Sign Up</a></li>
+        <li><a href="/sessions/new">Login</a></li>
+      <%end%>
+    </ul>
+  </div>
+
   <div class="container">
     <%= yield %>
     </div>
