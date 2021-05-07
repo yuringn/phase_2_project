@@ -41,7 +41,7 @@ end
 #     Rental.create(cost: 0, time: rand(1..24), puppy_id: Puppy.all.sample.id, person_id: Person.all.sample.id)
 # end
 
-20.times do
+30.times do
     Advertisement.create(shelter_id: Shelter.all.sample.id, puppy_id: Puppy.all.sample.id, info: Faker::Movies::PrincessBride.quote)
 end
 
